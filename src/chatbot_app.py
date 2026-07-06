@@ -1,14 +1,3 @@
-"""
-Kleiner regelbasierter Chatbot für das HolidayCheck-Media-Projekt.
-
-Der Bot nutzt KEINE externe KI-API. Er erkennt einfache Schlüsselwörter
-in der Nutzerfrage und führt dann passende, bereits vorhandene SQL-Dateien aus.
-Dadurch bleiben die Antworten nachvollziehbar und reproduzierbar.
-
-Angepasst für die gelieferten SQL-Dateien:
-01, 02a, 02b, 03a, 04a, 04b, 05a, 05b, 06a, 06b, 07a, 07b, 10 und 11.
-"""
-
 from __future__ import annotations
 
 from dataclasses import dataclass
