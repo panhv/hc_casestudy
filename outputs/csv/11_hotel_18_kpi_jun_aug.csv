@@ -1,0 +1,5 @@
+hotel_id,region,country,zeitraum,impressions,clicks,leads,cost,ctr_pct,cpc,lead_rate_pct,cost_per_lead,bookings,revenue,roas,conversion_rate,sort_order
+18,Ibiza,Spain,August 2025,369663.0,7165.0,418.0,13624.82,1.94,1.9,5.83,32.6,94.0,107692.93,7.9,0.2249,1
+18,Ibiza,Spain,July 2025,380246.0,7291.0,462.0,13526.4,1.92,1.86,6.34,29.28,132.0,166816.97,12.33,0.2857,1
+18,Ibiza,Spain,June 2025,438663.0,8052.0,668.0,11865.94,1.84,1.47,8.3,17.76,102.0,130523.77,11.0,0.1527,1
+18,Ibiza,Spain,CHANGE (June vs August %),-15.73,-11.02,-37.43,14.82,5.59,29.04,-29.68,83.5,-7.84,-17.49,-28.14,47.27,2

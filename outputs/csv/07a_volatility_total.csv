@@ -1,0 +1,6 @@
+volatility_rank,hotel_id,country,region,hotel_category,months,total_leads,avg_monthly_leads,sd_monthly_leads,cv_leads,min_monthly_leads,max_monthly_leads,range_leads,min_month,min_leads,cost_at_min,max_month,max_leads,cost_at_max
+1,18,Spain,Ibiza,4 Star,24,8244.0,343.5,180.39,0.5252,125.0,757.0,632.0,2025-12-01,125.0,4167.64,2024-07-01,757.0,13662.41
+2,1,Spain,Mallorca,5 Star,24,5091.0,212.13,88.21,0.4159,109.0,419.0,310.0,2025-01-01,109.0,2665.79,2024-07-01,419.0,7310.15
+3,12,Egypt,Marsa Alam,5 Star,24,16957.0,706.54,278.43,0.3941,337.0,1384.0,1047.0,2025-08-01,337.0,5747.78,2025-07-01,1384.0,5795.3
+4,4,Egypt,Hurghada,4 Star,24,10541.0,439.21,152.76,0.3478,230.0,753.0,523.0,2024-06-01,230.0,4803.47,2025-12-01,753.0,14328.98
+5,15,Austria,Tyrol,4 Star,24,5129.0,213.71,69.23,0.324,118.0,370.0,252.0,2025-05-01,118.0,1543.23,2024-12-01,370.0,4438.32

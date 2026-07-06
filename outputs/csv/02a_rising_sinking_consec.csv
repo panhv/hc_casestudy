@@ -1,0 +1,2 @@
+hotel_id,country,region,hotel_category,month_1,month_2,month_3,cost_month_1,cost_month_2,cost_month_3,leads_month_1,leads_month_2,leads_month_3,abs_cost_increase,abs_leads_drop,pct_cost_increase,pct_leads_drop,ano_score_pct
+18,Spain,Ibiza,4 Star,2025-06-01,2025-07-01,2025-08-01,11865.94,13526.4,13624.82,668.0,462.0,418.0,1758.88,250.0,0.1482,0.3743,0.5225

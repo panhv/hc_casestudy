@@ -1,0 +1,21 @@
+hotel_id,country,region,hotel_category,total_impressions,total_clicks,total_leads,total_cost,total_bookings,total_revenue,conversion_rate,revenue_q,leads_q,conversion_q,performance_score,segment_category
+3,Turkey,Antalya,5 Star,8855940.0,206736.0,10097.0,291945.62,1845,3015473.81,0.1827,4,3,3,10,1 Top Performer
+16,United Arab Emirates,Dubai,5 Star,5213438.0,145814.0,6443.0,168935.95,1485,3360972.45,0.2305,4,2,3,9,2 High Performer
+1,Spain,Mallorca,5 Star,5988849.0,98173.0,5091.0,104400.47,1687,2815618.01,0.3314,4,1,4,9,2 High Performer
+8,Italy,Sardinia,5 Star,9992119.0,185277.0,10953.0,225766.56,1519,2477549.02,0.1387,4,3,2,9,2 High Performer
+14,Greece,Kos,3 Star,6524142.0,174369.0,16334.0,113745.11,1561,1901359.68,0.0956,3,4,1,8,2 High Performer
+18,Spain,Ibiza,4 Star,5806784.0,110343.0,8244.0,176657.91,1540,1884737.57,0.1868,3,2,3,8,2 High Performer
+19,Bulgaria,Golden Sands,3 Star,1774506.0,42464.0,2078.0,68815.95,1460,1787941.87,0.7026,3,1,4,8,2 High Performer
+11,Turkey,Bodrum,4 Star,4755293.0,113057.0,7010.0,108394.2,1444,1721133.34,0.206,3,2,3,8,2 High Performer
+9,Croatia,Istria,4 Star,7561584.0,189909.0,11513.0,239470.35,1391,1688966.13,0.1208,3,3,2,8,2 High Performer
+6,Spain,Canary Islands,4 Star,7810619.0,203265.0,12604.0,287949.94,1355,1624904.58,0.1075,2,4,2,8,2 High Performer
+2,Greece,Crete,4 Star,3473720.0,63994.0,4489.0,64872.98,1379,1670107.95,0.3072,2,1,4,7,3 Potential / Optimize
+10,Spain,Costa del Sol,3 Star,5018778.0,123050.0,9025.0,140778.83,1328,1589898.0,0.1471,2,2,3,7,3 Potential / Optimize
+7,Greece,Rhodes,4 Star,6082429.0,133242.0,13568.0,106667.31,1281,1544723.87,0.0944,2,4,1,7,3 Potential / Optimize
+17,Tunisia,Djerba,4 Star,3471601.0,53272.0,3442.0,39675.86,1268,1502986.37,0.3684,2,1,4,7,3 Potential / Optimize
+4,Egypt,Hurghada,4 Star,7410340.0,202284.0,10541.0,209092.73,1260,1476836.22,0.1195,1,3,2,6,3 Potential / Optimize
+12,Egypt,Marsa Alam,5 Star,8473522.0,241701.0,16957.0,258613.06,690,1141691.57,0.0407,1,4,1,6,3 Potential / Optimize
+5,Portugal,Algarve,5 Star,7397580.0,164870.0,9888.0,190926.47,724,1149687.92,0.0732,1,3,1,5,4 Weak Performer
+13,Germany,Baltic Sea,4 Star,4386280.0,62232.0,5143.0,51768.14,653,769932.27,0.127,1,2,2,5,4 Weak Performer
+15,Austria,Tyrol,4 Star,4323117.0,71710.0,5129.0,59545.62,475,568651.55,0.0926,1,1,1,3,4 Weak Performer
+20,Cyprus,Paphos,4 Star,0.0,0.0,0.0,0.0,1379,1663390.61,,,,,,5 Gap

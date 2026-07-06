@@ -1,0 +1,31 @@
+year,hotel_id,country,region,hotel_category,month,leads,cost,bookings,revenue,ctr,cpc,lr,cpl,roas,aov,z_ctr,z_cpc,z_lr,z_cpl,z_roas,z_aov,anomaly_score,anomaly,reason
+2025,1,Spain,Mallorca,5 Star,2025-03-01,134.0,6320.44,32,48501.05,0.0162,1.68,0.0355,47.17,7.67,1515.66,-0.41,1.73,-1.66,1.64,-1.64,-1.1,8.18,Anomalous combination in performance metrics,Anomalous Combination in Performance Metrics
+2025,1,Spain,Mallorca,5 Star,2025-04-01,110.0,6174.28,43,73429.67,0.0164,1.76,0.0313,56.13,11.89,1707.67,-0.01,2.01,-2.2,2.33,-1.27,0.48,7.82,high CPL,Expensive customer acquisition
+2025,16,United Arab Emirates,Dubai,5 Star,2025-06-01,370.0,10843.07,75,165312.95,0.0282,1.22,0.0416,29.31,15.25,2204.17,0.07,1.29,-1.65,2.04,-1.96,-0.57,7.51,high CPL,Expensive customer acquisition
+2025,6,Spain,Canary Islands,4 Star,2025-11-01,376.0,9404.9,59,70684.49,0.0252,1.46,0.0584,25.01,7.52,1198.04,-1.46,1.21,-1.72,2.15,1.59,0.38,6.54,high CPL,Expensive customer acquisition
+2025,11,Turkey,Bodrum,4 Star,2025-03-01,290.0,5050.88,50,62225.46,0.0248,0.99,0.057,17.42,12.32,1244.51,0.91,1.35,-1.35,1.97,-1.65,0.37,6.32,Anomalous combination in performance metrics,Anomalous Combination in Performance Metrics
+2025,15,Austria,Tyrol,4 Star,2025-05-01,118.0,1543.23,17,19479.78,0.0168,0.84,0.0644,13.08,12.62,1145.87,0.04,0.75,-2.33,2.59,1.37,-0.28,5.95,high CPL,Expensive customer acquisition
+2025,7,Greece,Rhodes,4 Star,2025-11-01,439.0,3931.72,47,57157.67,0.0226,0.85,0.0954,8.96,14.54,1216.12,0.99,2.08,-1.13,1.9,-0.8,0.74,5.91,high CPC,High CPC
+2025,15,Austria,Tyrol,4 Star,2025-09-01,201.0,2309.45,17,16654.4,0.0166,0.86,0.0751,11.49,7.21,979.67,-0.37,2.3,1.36,-0.4,-1.35,-1.66,5.68,high CPC,High CPC
+2025,6,Spain,Canary Islands,4 Star,2025-07-01,627.0,14686.3,61,61443.66,0.0272,1.46,0.0621,23.42,4.18,1007.27,2.17,0.97,0.02,0.37,-1.63,-2.39,5.36,AOV drop,Very low revenue per booking (customer value sinking)
+2025,4,Egypt,Hurghada,4 Star,2025-07-01,236.0,4869.41,26,25224.75,0.0278,1.04,0.0503,20.63,5.18,970.18,0.95,0.15,-0.82,0.84,-1.38,-2.08,5.27,AOV drop,Very low revenue per booking (customer value sinking)
+2025,10,Spain,Costa del Sol,3 Star,2025-02-01,281.0,4789.6,52,66343.72,0.0246,1.2,0.0706,17.04,13.85,1275.84,0.02,2.35,-0.92,1.61,0.61,1.01,4.88,high CPC,High CPC
+2025,5,Portugal,Algarve,5 Star,2025-06-01,597.0,11568.53,43,63969.59,0.0221,1.24,0.0639,19.38,5.53,1487.66,-0.47,2.19,1.2,0.33,-0.83,-1.03,4.85,high CPC,High CPC
+2025,9,Croatia,Istria,4 Star,2025-12-01,419.0,9355.98,57,67601.64,0.0252,1.29,0.0576,22.33,7.23,1185.99,0.47,0.77,-1.28,2.04,-0.31,-0.41,4.81,high CPL,Expensive customer acquisition
+2025,5,Portugal,Algarve,5 Star,2025-04-01,339.0,7002.87,34,55157.37,0.0221,1.15,0.0555,20.66,7.88,1622.28,-0.4,-0.51,-2.25,1.89,1.44,0.13,4.54,low lead rate,Lead Conversion Crisis
+2025,14,Greece,Kos,3 Star,2025-12-01,601.0,4248.34,66,78205.33,0.0253,0.66,0.0937,7.07,18.41,1184.93,-2.34,0.67,-0.05,0.59,-0.33,-0.44,4.42,low CTR,Interest Drop
+2024,7,Greece,Rhodes,4 Star,2024-10-01,426.0,3682.24,43,52212.31,0.0205,0.82,0.095,8.64,14.18,1214.24,-2.18,1.58,-2.16,2.35,0.88,-0.23,8.5,high CPL,Expensive customer acquisition
+2024,11,Turkey,Bodrum,4 Star,2024-12-01,251.0,4322.64,47,48213.34,0.0235,0.99,0.0575,17.22,11.15,1025.82,-0.47,0.97,-2.02,1.89,-1.12,-1.99,8.46,low lead rate,Lead Conversion Crisis
+2024,10,Spain,Costa del Sol,3 Star,2024-11-01,241.0,4281.77,44,56151.81,0.0228,1.19,0.0668,17.77,13.11,1276.18,-2.24,1.71,-2.21,2.29,0.62,0.65,8.45,high CPL,Expensive customer acquisition
+2024,16,United Arab Emirates,Dubai,5 Star,2024-10-01,204.0,5985.55,49,103835.69,0.0268,1.21,0.0412,29.34,17.35,2119.1,-0.97,2.3,-1.31,2.0,-0.36,-1.0,7.94,high CPL,Expensive customer acquisition
+2024,6,Spain,Canary Islands,4 Star,2024-11-01,373.0,9270.27,47,54062.98,0.026,1.46,0.0589,24.85,5.83,1150.28,0.02,2.07,-1.31,2.12,0.27,-1.29,6.79,high CPL,Expensive customer acquisition
+2024,3,Turkey,Antalya,5 Star,2024-03-01,338.0,9483.33,60,104770.07,0.0225,1.39,0.0496,28.06,11.05,1746.17,-1.33,1.81,-1.02,2.24,-0.06,0.96,6.46,high CPL,Expensive customer acquisition
+2024,17,Tunisia,Djerba,4 Star,2024-04-01,153.0,1844.65,39,45812.42,0.0146,0.79,0.0652,12.06,24.84,1174.68,-1.7,2.36,0.71,0.41,-1.34,0.19,5.81,high CPC,High CPC
+2024,14,Greece,Kos,3 Star,2024-04-01,751.0,5270.25,40,39873.84,0.0257,0.67,0.0961,7.02,7.57,996.85,-1.1,0.98,1.14,-0.02,-1.39,-2.23,5.7,AOV drop,Very low revenue per booking (customer value sinking)
+2024,6,Spain,Canary Islands,4 Star,2024-09-01,633.0,14552.48,59,64217.84,0.0251,1.39,0.0605,22.99,4.41,1088.44,-1.62,-0.42,-0.53,0.2,-1.03,-2.32,5.7,AOV drop,Very low revenue per booking (customer value sinking)
+2024,1,Spain,Mallorca,5 Star,2024-06-01,263.0,5197.09,94,154964.48,0.0161,1.0,0.0508,19.76,29.82,1648.56,-0.87,0.73,-1.73,2.09,0.26,-0.23,5.65,high CPL,Expensive customer acquisition
+2024,19,Bulgaria,Golden Sands,3 Star,2024-01-01,72.0,2426.97,34,36526.64,0.0238,1.56,0.0462,33.71,15.05,1074.31,-0.18,-0.97,-0.59,0.04,-1.94,-2.44,5.19,AOV drop,Very low revenue per booking (customer value sinking)
+2024,16,United Arab Emirates,Dubai,5 Star,2024-02-01,184.0,5058.12,48,92219.1,0.0281,1.13,0.041,27.49,18.23,1921.23,0.36,-0.49,-1.41,0.86,-0.14,-2.28,4.69,AOV drop,Very low revenue per booking (customer value sinking)
+2024,19,Bulgaria,Golden Sands,3 Star,2024-10-01,58.0,2214.89,57,70299.9,0.0239,1.55,0.0405,38.19,31.74,1233.33,-0.11,-1.14,-2.43,2.07,1.47,0.35,4.61,high CPL,Expensive customer acquisition
+2024,12,Egypt,Marsa Alam,5 Star,2024-06-01,351.0,6140.98,13,22117.48,0.0294,1.06,0.0608,17.5,3.6,1701.34,0.88,-0.34,-2.01,2.05,-0.42,0.66,4.48,high CPL,Expensive customer acquisition
+2024,10,Spain,Costa del Sol,3 Star,2024-04-01,405.0,6552.8,54,56250.71,0.0248,1.14,0.0704,16.18,8.58,1041.68,0.43,-0.19,-0.92,0.53,-0.87,-2.09,4.41,AOV drop,Very low revenue per booking (customer value sinking)

@@ -1,0 +1,2 @@
+hotel_id,region,country,cost_2024,cost_2025,cost_change_pct,leads_2024,leads_2025,leads_change_pct,cost_per_lead_2024,cost_per_lead_2025,cost_per_lead_change_pct,bookings_2024,bookings_2025,bookings_change_pct,revenue_2024,revenue_2025,revenue_change_pct,roas_2024,roas_2025,roas_change_pct,conversion_rate_2024,conversion_rate_2025,conversion_rate_change_pct
+18,Ibiza,Spain,84624.18,92033.73,8.76,4433.0,3811.0,-14.03,19.09,24.15,26.51,731,809,10.67,894533.34,990204.23,10.7,10.57,10.76,1.78,0.1649,0.2123,28.73

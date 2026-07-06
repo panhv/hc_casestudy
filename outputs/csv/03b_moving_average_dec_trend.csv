@@ -1,0 +1,41 @@
+month,hotel_id,country,region,hotel_category,trend_3M_mov_av,leads_3m_diff_abs,revenue_3m_diff_abs,leads_3m_diff_pct,revenue_3m_diff_pct,trend_score_pct
+2025-12-01,15,Austria,Tyrol,4 Star,increasing,51.0,8803.38,0.27,0.46,0.73
+2025-12-01,12,Egypt,Marsa Alam,5 Star,increasing,176.67,10441.12,0.26,0.17,0.43
+2025-12-01,4,Egypt,Hurghada,4 Star,increasing,111.67,7572.98,0.24,0.11,0.35
+2025-12-01,5,Portugal,Algarve,5 Star,"leads decrease, revenue increase",-42.0,2995.47,-0.1,0.06,-0.04
+2025-12-01,20,Cyprus,Paphos,4 Star,stable/mixed,0.0,-3417.81,,-0.05,-0.05
+2025-12-01,7,Greece,Rhodes,4 Star,"leads decrease, revenue increase",-93.0,4820.45,-0.16,0.07,-0.09
+2025-12-01,2,Greece,Crete,4 Star,"leads decrease, revenue increase",-20.33,589.57,-0.11,0.01,-0.1
+2025-12-01,9,Croatia,Istria,4 Star,decreasing,-49.0,-1094.88,-0.11,-0.02,-0.13
+2025-12-01,17,Tunisia,Djerba,4 Star,decreasing,-19.67,-3222.84,-0.13,-0.05,-0.18
+2025-12-01,11,Turkey,Bodrum,4 Star,decreasing,-18.0,-11330.36,-0.06,-0.14,-0.2
+2025-12-01,14,Greece,Kos,3 Star,decreasing,-75.67,-7105.88,-0.12,-0.08,-0.2
+2025-12-01,13,Germany,Baltic Sea,4 Star,decreasing,-29.67,-2357.46,-0.14,-0.07,-0.21
+2025-12-01,16,United Arab Emirates,Dubai,5 Star,decreasing,-25.33,-20019.33,-0.09,-0.13,-0.22
+2025-12-01,8,Italy,Sardinia,5 Star,decreasing,-52.67,-15463.25,-0.12,-0.14,-0.26
+2025-12-01,19,Bulgaria,Golden Sands,3 Star,decreasing,-11.0,-9219.17,-0.13,-0.13,-0.26
+2025-12-01,10,Spain,Costa del Sol,3 Star,decreasing,-57.0,-8560.17,-0.15,-0.12,-0.27
+2025-12-01,6,Spain,Canary Islands,4 Star,decreasing,-56.0,-16437.48,-0.11,-0.2,-0.31
+2025-12-01,3,Turkey,Antalya,5 Star,decreasing,-55.33,-29467.82,-0.16,-0.21,-0.37
+2025-12-01,1,Spain,Mallorca,5 Star,decreasing,-53.33,-38832.15,-0.26,-0.31,-0.57
+2025-12-01,18,Spain,Ibiza,4 Star,decreasing,-91.67,-18668.01,-0.38,-0.28,-0.66
+2024-12-01,15,Austria,Tyrol,4 Star,increasing,60.67,5454.35,0.35,0.25,0.6
+2024-12-01,4,Egypt,Hurghada,4 Star,increasing,109.67,11563.67,0.24,0.19,0.43
+2024-12-01,12,Egypt,Marsa Alam,5 Star,increasing,155.33,1941.35,0.22,0.04,0.26
+2024-12-01,20,Cyprus,Paphos,4 Star,stable/mixed,0.0,3535.86,,0.06,0.06
+2024-12-01,17,Tunisia,Djerba,4 Star,"leads decrease, revenue increase",-15.33,2781.47,-0.12,0.06,-0.06
+2024-12-01,14,Greece,Kos,3 Star,decreasing,-46.0,-204.28,-0.07,-0.0,-0.07
+2024-12-01,3,Turkey,Antalya,5 Star,"leads decrease, revenue increase",-57.0,1984.37,-0.13,0.02,-0.11
+2024-12-01,2,Greece,Crete,4 Star,"leads decrease, revenue increase",-25.67,1020.05,-0.14,0.02,-0.12
+2024-12-01,5,Portugal,Algarve,5 Star,decreasing,-47.67,-897.59,-0.12,-0.02,-0.14
+2024-12-01,6,Spain,Canary Islands,4 Star,decreasing,-44.0,-6210.09,-0.09,-0.1,-0.19
+2024-12-01,16,United Arab Emirates,Dubai,5 Star,decreasing,-34.67,-5897.6,-0.14,-0.05,-0.19
+2024-12-01,11,Turkey,Bodrum,4 Star,decreasing,-34.67,-4686.02,-0.12,-0.08,-0.2
+2024-12-01,10,Spain,Costa del Sol,3 Star,decreasing,-51.0,-4442.07,-0.14,-0.08,-0.22
+2024-12-01,9,Croatia,Istria,4 Star,decreasing,-57.67,-8542.56,-0.12,-0.13,-0.25
+2024-12-01,19,Bulgaria,Golden Sands,3 Star,decreasing,-8.33,-9496.65,-0.11,-0.14,-0.25
+2024-12-01,7,Greece,Rhodes,4 Star,decreasing,-67.67,-6703.51,-0.13,-0.13,-0.26
+2024-12-01,8,Italy,Sardinia,5 Star,decreasing,-52.67,-15187.46,-0.12,-0.14,-0.26
+2024-12-01,13,Germany,Baltic Sea,4 Star,decreasing,-24.0,-6100.88,-0.11,-0.18,-0.29
+2024-12-01,1,Spain,Mallorca,5 Star,decreasing,-49.33,-22841.24,-0.24,-0.21,-0.45
+2024-12-01,18,Spain,Ibiza,4 Star,decreasing,-113.67,-21356.28,-0.36,-0.37,-0.73
