@@ -45,8 +45,12 @@ SQL_FILES = {
         "02b_rising_sinking.sql",
 
     ],
-    "moving_average": [
-        "03_moving_average_trends.sql",
+    "moving_average_trends_all": [
+        "03a_moving_average_trends.sql",
+    ],
+
+    "moving_average_top_trends": [
+        "03b_moving_average_top_trends.sql",
     ],
 
     "hotel_segments_total": [
@@ -335,6 +339,9 @@ def sql_response(intent: str, intro: str, question: str) -> BotResponse:
     df = filter_result(run_sql(intent), question)
     return BotResponse(f"{intro}:\n\n" + dataframe_to_markdown(df), df)
 
+def asks_for_top_trends(q: str) -> bool:
+    """Erkennt, ob die Frage eine Top Abfrage meint."""
+    return any(word in q for word in ["top trend", "top"])
 
 def asks_for_year_view(q: str) -> bool:
     """Erkennt, ob die Frage eine Auswertung pro Jahr meint."""
@@ -413,11 +420,8 @@ def answer_question(question: str) -> BotResponse:
         )
 
     if any(word in q for word in ["moving average", "gleitender durchschnitt", "trend", "trends"]):
-        return sql_response(
-            "moving_average",
-            "Hier sind Moving Average und Trendinformationen",
-            q,
-        )
+        intent = "moving_average_top_trends" if asks_for_top_trends(q) else "moving_average_trends_all"
+        return sql_response(intent, "Hier sind die 3-Monats-Moving_Average Trends", q)
 
     if any(word in q for word in ["segment", "segmente", "segmentierung"]):
         intent = "hotel_segments_per_year" if asks_for_year_view(q) else "hotel_segments_total"
