@@ -1,6 +1,6 @@
--- Aufgabe 3: Drei-Monats-Moving-Average für Leads und Revenue plus Trendlabel
+-- Drei-Monats-Moving-Average über einen Zeitraum von MINDESTENS drei Monaten
 
--- aggregation of leads per hotel per month from campaign data
+-- aggregation of monthly leads per hotel 
 WITH campaign_monthly AS (
     SELECT
         hotel_id, 
@@ -10,7 +10,7 @@ WITH campaign_monthly AS (
     GROUP BY hotel_id, month
 ),
 
--- aggregation of revenue per hotel per month from booking data
+-- ggregation of monthly revenue per hotel 
 booking_monthly AS ( 
     SELECT 
         hotel_id, 
@@ -29,13 +29,13 @@ all_months_raw AS (
 
 -- identify start and end months
 date_bounds AS (
-    SELECT
+    SELECT 
         MIN(month) AS start_month, 
         MAX(month) AS end_month 
     FROM all_months_raw 
 ),
 
--- create a month spine to ensure all months are represented in case of missing data for some hotels
+--create a month spine to ensure all months are represented in case of missing data for some hotels
 month_spine AS ( 
     SELECT 
         month::DATE AS month 
@@ -58,7 +58,7 @@ hotel_months AS (
     CROSS JOIN month_spine AS ms 
 ), 
 
--- combine leads and revenue per hotel per month
+-- combine leads and revenue per hotel per month based on month_spine 
 base_monthly AS ( 
     SELECT 
         hm.month,
@@ -83,7 +83,7 @@ moving_average AS (
         *,
         AVG(leads) OVER hotel_window AS leads_3m_mov_av, 
         AVG(revenue) OVER hotel_window AS revenue_3m_mov_av,
-        COUNT(*) OVER hotel_window AS months_in_window 
+        ROW_NUMBER() OVER (PARTITION BY hotel_id ORDER BY month) AS row_num
     FROM base_monthly
     WINDOW hotel_window AS ( 
         PARTITION BY hotel_id 
@@ -91,14 +91,50 @@ moving_average AS (
         ROWS BETWEEN 2 PRECEDING AND CURRENT ROW 
     ) 
 ),
--- calculate previous month's moving averages for leads and revenue per hotel
-with_prev_mov_av AS (
+
+-- calculate previous month's moving averages for leads and revenue per hotel 
+with_previous AS (
     SELECT 
         *, 
         LAG(leads_3m_mov_av) OVER (PARTITION BY hotel_id ORDER BY month) AS prev_leads_3m_mov_av, 
         LAG(revenue_3m_mov_av) OVER (PARTITION BY hotel_id ORDER BY month) AS prev_revenue_3m_mov_av 
     FROM moving_average 
-) 
+),
+
+-- assigning trends 
+monthly_trend AS (
+    SELECT 
+        *,
+        CASE 
+            WHEN row_num < 4 THEN 'Trend not possible' -- Die ersten 3 Monate bauen den gleitenden Durchschnitt erst auf
+            WHEN leads_3m_mov_av > prev_leads_3m_mov_av AND revenue_3m_mov_av > prev_revenue_3m_mov_av THEN 'increasing'
+            WHEN leads_3m_mov_av < prev_leads_3m_mov_av AND revenue_3m_mov_av < prev_revenue_3m_mov_av THEN 'decreasing'
+            WHEN leads_3m_mov_av > prev_leads_3m_mov_av AND revenue_3m_mov_av < prev_revenue_3m_mov_av THEN 'leads increase, revenue decrease'
+            WHEN leads_3m_mov_av < prev_leads_3m_mov_av AND revenue_3m_mov_av > prev_revenue_3m_mov_av THEN 'leads decrease, revenue increase'
+            ELSE 'stable/mixed'
+        END AS single_month_trend
+    FROM with_previous
+),
+
+-- creating islands and gaps: 
+-- unique group ids for same consecutive trends
+trend_groups AS (
+    SELECT 
+        *,
+        ROW_NUMBER() OVER (PARTITION BY hotel_id ORDER BY month) - 
+        ROW_NUMBER() OVER (PARTITION BY hotel_id, single_month_trend ORDER BY month) AS trend_group_id
+    FROM monthly_trend
+),
+
+-- identifying total numbers of ongoing trend and current month in trend 
+trend_duration AS (
+    SELECT 
+        *,
+        COUNT(*) OVER (PARTITION BY hotel_id, single_month_trend, trend_group_id) AS total_months_in_trend,
+        ROW_NUMBER() OVER (PARTITION BY hotel_id, single_month_trend, trend_group_id ORDER BY month) AS current_month_in_trend
+    FROM trend_groups
+)
+
 SELECT 
     month, 
     hotel_id, 
@@ -107,31 +143,27 @@ SELECT
     hotel_category, 
     leads, 
     ROUND(revenue, 2) AS revenue,
-    ROUND(leads_3m_mov_av, 2) AS leads_3m_mov_av, 
-    ROUND(revenue_3m_mov_av, 2) AS revenue_3m_mov_av, 
-    ROUND(leads_3m_mov_av - prev_leads_3m_mov_av, 2) AS leads_3m_diff_abs, 
-    ROUND(revenue_3m_mov_av - prev_revenue_3m_mov_av, 2) AS revenue_3m_diff_abs, 
 
+    ROUND(leads_3m_mov_av, 2) AS leads_3m_mov_av, 
+    ROUND(revenue_3m_mov_av, 2) AS revenue_3m_mov_av,     
+
+    -- difference between current and previous 3-month-moving average
+    ROUND((leads_3m_mov_av - prev_leads_3m_mov_av), 2) AS leads_3m_diff_abs, 
+    ROUND((revenue_3m_mov_av - prev_revenue_3m_mov_av), 2) AS revenue_3m_diff_abs,    
+
+    -- difference between current and previous 3-month-moving average in pct
     ROUND((leads_3m_mov_av - prev_leads_3m_mov_av) / NULLIF(prev_leads_3m_mov_av, 0), 2) AS leads_3m_diff_pct, 
     ROUND((revenue_3m_mov_av - prev_revenue_3m_mov_av) / NULLIF(prev_revenue_3m_mov_av, 0), 2) AS revenue_3m_diff_pct, 
 
+    total_months_in_trend AS total_months_in_current_trend,
+    current_month_in_trend,
+
     CASE
-        WHEN months_in_window < 3 THEN 'Trend not possible'
-        WHEN leads_3m_diff_abs > 0 AND revenue_3m_diff_abs > 0 THEN 'increasing'
-        WHEN leads_3m_diff_abs < 0 AND revenue_3m_diff_abs < 0 THEN 'decreasing'
+        WHEN single_month_trend = 'Trend not possible' THEN 'Trend not possible'
+        WHEN total_months_in_trend >= 3 THEN single_month_trend || ' (Phase of ' || total_months_in_trend || ' months)'
+        ELSE 'No sustaining trend (< 3 months)'
+    END AS consecutive_trend
+    
 
-        WHEN leads_3m_diff_abs > 0 AND revenue_3m_diff_abs < 0 THEN 'leads increase, revenue decrease'
-        WHEN leads_3m_diff_abs < 0 AND revenue_3m_diff_abs > 0 THEN 'leads decrease, revenue increase'
-        ELSE 'stable/mixed'
-
-        /*WHEN leads_3m_diff_abs = 0 AND revenue_3m_diff_abs = 0 THEN 'leads and revenue stable'
-        WHEN leads_3m_diff_abs = 0 AND revenue_3m_diff_abs > 0 THEN 'leads stable, revenue increase'
-        WHEN leads_3m_diff_abs = 0 AND revenue_3m_diff_abs < 0 THEN 'leads stable, revenue decrease'
-        WHEN leads_3m_diff_abs > 0 AND revenue_3m_diff_abs = 0 THEN 'leads increase, revenue stable'
-        WHEN leads_3m_diff_abs < 0 AND revenue_3m_diff_abs = 0 THEN 'leads decrease, revenue stable' */
-
-
-    END AS trend_3M_mov_av
-
-FROM with_prev_mov_av 
+FROM trend_duration 
 ORDER BY hotel_id::INT, month;
