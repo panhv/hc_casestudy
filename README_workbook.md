@@ -51,14 +51,34 @@ HolidayCheck Media verkauft Werbeprodukte an Hotels und Destinationen. Ein Hotel
 
     -> dynamischer Durchschnitt, glättet kurzfristige Veränderungen und zeigt stabilere Trends
 
-- 03_moving_average_trend: berechnet den 3-Monats-Moving-Average für jedes Hotel; für Januar und Februar 2024 sind keine Trends identifizierbar, da nicht ausreichend Daten vorliegen
-    
+- 03a_moving_average_trends: berechnet den 3-Monats-Moving-Average für jedes Hotel; für Januar und Februar 2024 sind keine Trends identifizierbar, da nicht ausreichend Daten vorliegen
+
     **Trends:**
     - increase: Anstieg in Leads UND Umsatz
     - decrease: Rückgang in Leads UND Umsatz
     - leads increase, revenue decrease
     - leads decrease, revenue increase
     - stable/mixed: Leads UND Umsatz stabil ODER nur eins davon stabil
+
+    
+- 03b_moving_average_top_trends: 
+    
+    gibt die Rekorde der 3-Monats-Moving-Average der jeweiligen Trends heraus.
+
+    Der längste Anstieg hielt 7 Monate bei Hotel 17 an, der längste Rückgang hielt bei Hotel 1 über 6 Monate an. 
+
+
+| hotel_id	| country |	trend	| period_length (months) |
+| :---: | :---: | :---: | :---: |
+| 1	| Spain | decreasing | 6 |	
+| 17 | Tunisia | increasing| 7 |	
+| 20| Cyprus | stable/mixed	| 21 | 
+| 10 |	Spain |	leads increase, revenue decrease | 2 |
+| 19 |	Bulgaria | leads increase, revenue decrease | 2 |
+| 2	| Greece | leads increase, revenue decrease | 2 |
+| 3	| Turkey | leads decrease, revenue increase | 3 |
+| 4	| Egypt | leads decrease, revenue increase | 3 |
+
 
 
 **Aufgabe 4:** 
